@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #09090a;
+    color: white;
+
+    /* display: grid;
+    place-items: center;
+        place-itens pertence ao display grid */
+
+    height: 100vh;
+        /* vh = viewport height -> diz para o programa que o body será da altura do valor "x"vh que tem de visível */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+        /* Ele pega todo bloco e deixa os blocos que estão dentro um em cada "ponta" */
+    padding: 48px;
+        /* dara uma espaçamento para borda, para ela nao ficar colada nas laterais */
+
+    position: fixed;
+        /* fixa o "cabeçalho" */
+    width: 100%;
+    background-color: #09090a;
+        /* Depois de fixar, fazer ajustes para não ficar desorganizado */
+        /* Para achar a altura: f12, selecionar header, ir em "calculado", filtrar: height (daria 180, mas optei por 182,
+        bisto que foi o que o professor colocou)
+        Após isso, ir até o form, e colocá-lo para baixo */
+}
+
+button {
+    padding: 16px 24px;
+        /* primeiro é a distancia do prenchimento encima e embaixo e, o segundo, nas laterais */
+    border-radius: 8px;
+    border: 1px solid #8B5CF6;
+        /* retirado do figma */
+    background-color: transparent;
+        /* poderia ser a mesma cor do background do body */
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+        /* encontrado no figma */
+}
+
+form {
+    display: flex;
+    padding: 182px 48px 48px;
+    width: fit-content;
+        /* fit-content deixará um espaço a direita da margem */
+}
+
+.habits {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    margin-top: 60px;
+}
+
+.habit {
+    width: 64px;
+    height: 64px;
+
+    font-size: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        /* para centralizar no meio do bloco */
+}
+
+.days {
+    display: flex;
+    margin-left: 32px;
+    gap: 48px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.day div {
+    /* tá pegando todas as divs dentro da classe "day" */
+    margin-bottom: 8px;
+
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: 125%;
+
+    color: #A1A1AA;
+
+    text-align: center;
+}
+
+input {
+    appearance: none;
+        /* quando é input, deve-se tirar a aparencia para funcionar algumas configs */
+    -webkit-appearance: none;
+        /* alguns navegadores não leem o codigo de cima, por isso deve-se colocar ambos */
+
+    width: 64px;
+    height: 64px;
+
+    border: 2px solid #27272A;
+    border-radius: 8px;
+
+    background: #18181B;
+}
+
+input:checked {
+    background: #8B5CF6;
+    
+    border: 2px solid #A78BFA;
+}
+
+@media (max-width: 570px) {
+    button div {
+        display: none;
+    }
+}
